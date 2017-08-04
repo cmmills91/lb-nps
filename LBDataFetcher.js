@@ -12,10 +12,10 @@ var request = require('superagent');
 var csv = require('csvtojson');
 var async = require('async');
 
-var OUTPUT_CSV_FILE = process.env.FULL_SURVEY_CSV_FILE || "./fullData.csv";
+//var OUTPUT_CSV_FILE = process.env.FULL_SURVEY_CSV_FILE || "./fullData.csv";
 var OUTPUT_JSON_FILE = process.env.FULL_SURVEY_JSON_FILE || "./fullData.json";
 
-OUTPUT_CSV_FILE = fs.openSync(OUTPUT_CSV_FILE, 'w');
+//OUTPUT_CSV_FILE = fs.openSync(OUTPUT_CSV_FILE, 'w');
 OUTPUT_JSON_FILE = fs.openSync(OUTPUT_JSON_FILE, 'w');
 
 var LBApi = {
