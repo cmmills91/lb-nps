@@ -1,5 +1,6 @@
 var DataFetcher = require("./LBDataFetcher");
 var Vectorizer = require("./JSONFeatureVectorizer");
+var FM = require("./FactorizationMachine");
 
 function main() {
 	DataFetcher.augmentSurveyData(process.env.DATA_SOURCE).then(function(fullData) {
@@ -22,6 +23,8 @@ function main() {
 		];
 		var featureSet = Vectorizer.vectorize(fullData, fieldsToVectorize);
 		console.log("Feature Set Length: " + featureSet.length);
+		var weights = FM.train(featureSet);
+		console.log(weights);
 	});
 }
 
